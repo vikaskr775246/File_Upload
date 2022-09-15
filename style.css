@@ -1,0 +1,140 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #bdc3c7;
+    --primary-color: #2980b9;
+}
+
+body {
+    position: relative;
+    background-color: var(--bg-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#wapper {
+    position: relative;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+input {
+    display: none;
+}
+
+.btn {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--bg-color);
+}
+
+#menu {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 2rem;
+    list-style: none;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    transition: .5s ease-in;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+li {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    font-weight: bolder;
+}
+
+li span {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+#info-wapper {
+    position: relative;
+}
+
+#btn_click {
+    position: absolute;
+    bottom: 4.4rem;
+    left: 0;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--primary-color);
+    list-style: none;
+    color: black;
+    border-radius: 10px;
+    padding: 30px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: .5s;
+}
+
+#btn_click.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+#btn_click::after {
+    content: '';
+    position: absolute;
+    bottom: -.9rem;
+    left: 2rem;
+    background-color: var(--primary-color);
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    border-radius: 4px;
+}
+
+#btn_click span {
+    color: white;
+}
+
+#close {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
